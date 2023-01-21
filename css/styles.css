@@ -1,0 +1,104 @@
+@import './buttons.css';
+/* esto nos ayuda a importar otras cosas de otro css con @import './buttons.css';  */ 
+
+body {
+    background-color: #26B4BC;
+    font-family: Arial, Helvetica, sans-serif;
+
+
+}
+
+
+.wrapper{
+
+    max-inline-size: 900px;
+    /* con esto limitamos los px maximos 
+     esto normalmente se debe hacer en un wrapper que contenga este elemento, para agrupar o contener el div del video player. 
+
+    */
+    margin:auto;
+    /* mantener el elemento centrado.*/
+}
+
+.player{
+    margin-block-start: 100px;
+    
+
+    position: relative;
+
+}
+.player video{
+    inline-size: 100%;
+    /* inline-size nos deja aprovechar x porcentaje para el video.
+    en este caso dentro de la clase player del html el id de video.
+    Esto nos permite aprovechar sea cual sea el tamaño de la ventana del browser. 
+    
+    esto normalmente se debe hacer en un wrapper que contenga este elemento.
+    */
+    
+    aspect-ratio: 16/9;
+
+    vertical-align: middle;
+    /* esto se usa por un espacio abajo del cuadro del borde del player que queda vacío*/
+    object-fit: cover;
+    /* para que el video esté al mismo tamaño del poster/cover del video que sale antes de iniciar*/
+}
+
+.player-title{
+    color: white;
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-start: 20px;
+
+}
+
+.player-actions{
+    position: absolute;
+    inset: 0;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*el display flex, justify-content center, y align-items center me permiten posicionar los botones en el centro
+    en este punto los botones se ven encima del reproductor. pero no andan, porque por el orden de html el video es lo ultimo que sale
+    asi que con el z index de abajo con valor de 2 podemos re asignar el valor. 
+    */
+
+    
+    /* z-index: 2;*/
+
+    /*el z index nos permite cambiar el orden en el que se apilan o hacen stack las cosas.
+    podemos tambien en el html poner de primero el tag de video.
+    */
+    gap: 20px;
+}
+
+.player-progress{
+    
+    position: absolute;
+    inset-block-end: 0;
+    inset-inline: 0;
+    display: flex;
+    /* esto le permite luego abajo al player-progress input poder ocupar toda la parte de abajo del video*/
+    padding: 10px;
+}
+
+.player-progress input{
+    flex: 1;
+    /*esto flex 1 es para que tome todo el ancho del video como progress bar.*/
+
+}
+
+.player-overlay{
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: .3s opacity;
+}
+
+.player:hover .player-overlay{
+    /* pseudo clase para activar si estoy encima de ella.*/
+
+    
+    opacity: 1;
+}

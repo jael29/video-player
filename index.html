@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <!--este <link rel="stylesheet" href="./css/styles.css"> es para enlazar con lo que será el css principal  -->
+    <title>Video player</title>
+
+    
+</head>
+<body>
+
+    <div class="wrapper">
+        
+        <div class="player">
+            <video id="video" poster="./images/poster.jpg" muted src="./videos/lofi.mp4" width="400"></video>
+
+            
+
+            <div class="player-overlay">
+
+
+                <!-- este player-overlay class engloba o contiene a todos los botones, y barra de progress. -->
+                <h2 class="player-title">Música para programar</h2>
+                
+                <div class="player-actions"> 
+    
+                    <button class="button" id="backward" aria-label="retroceder 10 segundos" title="retroceder 10 segundos"></button>              
+                    <button class="button" id="play" aria-label="reproducir" title="reproducir"></button>
+                    <button class="button" hidden id="pause" aria-label="pausar" title="pausar"></button>
+                    <button class="button" id="forward" aria-label="adelantar 10 segundos" title="adelantar 10 segundos"></button>
+                        <!-- 
+                            aria-label es para accessibility readers y eso
+                            title es para el mensaje si tienes el mouse encima
+                    
+                            si escribo .player y enter o tab, me hará un contenedor div automaticamente con apertura y cierre de etiquetas. 
+                    
+                            <button>avanzar 10 segundos</button>
+                        -->
+    
+    
+                    
+                </div>
+                <div class="player-progress">
+                    <input id="progress" type="range" min="0" value = "0" step="1">
+                    <!--no poner el max="100" ejemplo, eso poner con el javascript con un evento. ya que esto carga metadatos y no sabemos en realidad 
+                    cuanto carga o toma que dura el video.
+                        value "0" para que arrance en 0 la barra. 
+    
+                -->
+                </div>
+
+
+
+            </div>
+
+            
+                
+
+                <!--if we take out the controls attribute controls will dissappear and we can then implemment our own controls.-->
+        </div>
+
+
+    </div>    
+
+
+
+    <script src="./js/index.js"> </script>
+</body>
+</html>
