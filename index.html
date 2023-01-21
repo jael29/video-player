@@ -32,9 +32,15 @@
                     <button class="button" id="play" aria-label="reproducir" title="reproducir"></button>
                     <button class="button" hidden id="pause" aria-label="pausar" title="pausar"></button>
                     <button class="button" id="forward" aria-label="adelantar 10 segundos" title="adelantar 10 segundos"></button>
+                    
+                     <button class="button" id="volumeOn" aria-label="encender volumen" title="encender volumen"></button>
+                    <button class="button" hidden id="volumeOff" aria-label="apagar volumen" title="apagar volumen"></button>
+                    
+                    
                         <!-- 
                             aria-label es para accessibility readers y eso
                             title es para el mensaje si tienes el mouse encima
+                    el hidden feature aqui es utilizado para que cuando cargue la página el botón no este visible ejemplo pause y volume off.
                     
                             si escribo .player y enter o tab, me hará un contenedor div automaticamente con apertura y cierre de etiquetas. 
                     
@@ -45,6 +51,9 @@
                     
                 </div>
                 <div class="player-progress">
+                    <button class="button" id="volumeOn1" aria-label="encender volumen" title="encender volumen"></button>
+                    <button class="button" hidden id="volumeOff1" aria-label="apagar volumen" title="apagar volumen"></button>
+                    
                     <input id="progress" type="range" min="0" value = "0" step="1">
                     <!--no poner el max="100" ejemplo, eso poner con el javascript con un evento. ya que esto carga metadatos y no sabemos en realidad 
                     cuanto carga o toma que dura el video.
