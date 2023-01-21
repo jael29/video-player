@@ -7,6 +7,13 @@ const $play = document.querySelector('#play')
 const $pause = document.querySelector('#pause')
 const $backward = document.querySelector('#backward')
 const $forward = document.querySelector('#forward')
+
+const $volumeOn = document.querySelector('#volumeOn')
+const $volumeOff = document.querySelector('#volumeOff')
+
+const $volumeOn1 = document.querySelector('#volumeOn1')
+const $volumeOff1 = document.querySelector('#volumeOff1')
+
         /* creamos variables constantes y les ponemos nombres ejemplo video play paus
         y el document.querySelector('#video') las guarda para ser llamadas. referiendose al id #video, #play,  #paus.
         
@@ -78,6 +85,53 @@ function handleForward(){
 
 
 }
+
+
+
+$volumeOn.addEventListener('click', handleVolumeOn)
+
+function handleVolumeOn(){
+        $video.muted = false;
+        $volumeOn.hidden = true
+        $volumeOff.hidden = false
+        console.log('encendistes el volumen')
+}
+
+
+$volumeOff.addEventListener('click', handleVolumeOff)
+
+
+function handleVolumeOff(){
+        $video.muted = true;
+        $volumeOn.hidden = false
+        $volumeOff.hidden = true
+        console.log('apagastes el volumen')
+}
+
+
+$volumeOn1.addEventListener('click', handleVolumeOn)
+
+function handleVolumeOn(){
+        $video.muted = false;
+        $volumeOn1.hidden = true
+        $volumeOff1.hidden = false
+        console.log('encendistes el volumen')
+}
+
+
+$volumeOff1.addEventListener('click', handleVolumeOff)
+
+
+function handleVolumeOff(){
+        $video.muted = true;
+        $volumeOn1.hidden = false
+        $volumeOff1.hidden = true
+        console.log('apagastes el volumen')
+}
+
+
+
+
 
 const $progress = document.querySelector('#progress')
 $video.addEventListener('loadedmetadata', handleLoaded)
