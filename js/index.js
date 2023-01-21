@@ -109,9 +109,9 @@ function handleVolumeOff(){
 }
 
 
-$volumeOn1.addEventListener('click', handleVolumeOn)
+$volumeOn1.addEventListener('click', handleVolumeOn1)
 
-function handleVolumeOn(){
+function handleVolumeOn1(){
         $video.muted = false;
         $volumeOn1.hidden = true
         $volumeOff1.hidden = false
@@ -119,10 +119,10 @@ function handleVolumeOn(){
 }
 
 
-$volumeOff1.addEventListener('click', handleVolumeOff)
+$volumeOff1.addEventListener('click', handleVolumeOff1)
 
 
-function handleVolumeOff(){
+function handleVolumeOff1(){
         $video.muted = true;
         $volumeOn1.hidden = false
         $volumeOff1.hidden = true
