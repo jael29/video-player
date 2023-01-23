@@ -53,17 +53,17 @@
 
 
 #volumeOn1 {
-    background-image: url('../images/audioon.svg');
+    background-image: url('../images/volumeOn1.svg');
+    
 
 
 
 }
 
 #volumeOff1 {
-    background-image: url('../images/audiooff.svg');
-
+    background-image: url('../images/volumeOff1.svg');
+    
     
 
 
 }
-
